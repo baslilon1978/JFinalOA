@@ -1,0 +1,30 @@
+java、com包底下
+1.创建Entity、DAO文件
+mvc/common/model/base/BaseOaXxx
+mvc/common/model/OaXxx
+
+2.在MappingKit中加入表关系映射
+mvc/common/model/_MappingKit
+例：arp.addMapping("oa_Xxx", "id", OaXxx.class);
+
+3.创建业务Controller、Service
+mvc/oa/xxx/OaXxxController
+mvc/oa/xxx/OaXxxService
+
+4.添加路由映射
+config/MainConfig
+例：me.add("/oa/xxx",OaXxxController.class);
+
+webapp底下
+5.添加页码文件
+
+注：
+项目>
+同一目录层级下相同业务文件存放在一个文件夹底下（user用户：../admin/user/UserControl.java、UserService.java...；../user/list.html、edit.html...;）；
+文件夹统一以小写命名、JAVA文件以帕斯卡命名、HTML文件以驼峰命名；
+数据库>
+数据库表以模块_+功能点命名，多个单词用下划线'_'分隔（oa_xxx_xxx）;
+表、字段全部小写命名，禁止出现大写;
+字段必须填写描述信息;
+在命名表的列时，不要重复表的名称,字段命名使用完整名称，禁止缩写;
+命名规范示例:名词user_id,user_name,sex 动宾短语is_admin,if_true。
